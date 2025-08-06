@@ -1,4 +1,4 @@
-#include "memory.hpp"
+#include "../memory/memory.hpp"
 #include "Update.hpp"
 
 class rbx_mgr {
