@@ -1,10 +1,11 @@
 #include "../memory/memory.hpp"
-#include "Update.hpp"
+#include "../Update.hpp"
+#include "../utilities/utility.hpp"
 
 class rbx_mgr {
 public:
     static void initialize() {
-        mem_mgr::get_lib_base("libroblox.so");
+        utility_mgr::log("rbx_mgr initialized");
     }
     
     static void print(const char* message) {
@@ -14,9 +15,3 @@ public:
         rbx_print(1, message);
     }
 };
-
-__attribute__((constructor))
-void on_load() {
-    rbx_mgr::initialize();
-    rbx_mgr::print("hi");
-}
